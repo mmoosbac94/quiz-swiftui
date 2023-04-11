@@ -21,10 +21,7 @@ class QuestionsRepository {
     
     
     private func getFourRandomQuestions() -> AnyPublisher<[Question], Error> {
-        return apiService.questionPublisher().ma
-            
-        
-
+        return apiService.questionPublisher()
     }
     
     
