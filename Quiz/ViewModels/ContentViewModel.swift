@@ -44,7 +44,7 @@ class ContentViewModel: ObservableObject {
     
     func getNextQuestion() {
         disableAnswers = true
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
             if(!(self.currentQuestionIndex == self.questionsCache.count - 1)) {
                 self.currentQuestionIndex+=1
                 self.randomAnswers = self.setRandomizedAnswers(randomQuestion: self.questionsCache[self.currentQuestionIndex])
@@ -95,6 +95,7 @@ class ContentViewModel: ObservableObject {
                 self.showEndResult = true
             }
         }
+
     }
     
     func getWrongAnswers() -> Int{
